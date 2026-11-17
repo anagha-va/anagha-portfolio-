@@ -1,335 +1,377 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Anagha R — Cyber Forensics &amp; Network Security</title>
-<meta name="description" content="Portfolio of Anagha R, B.Sc. Cyber Forensics graduate specialising in network security.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anagha R | Cybersecurity Portfolio</title>
+<meta name="description" content="Anagha R - BSc Cyber Forensics graduate, exploring cybersecurity, network security and digital forensics.">
+
 <style>
-:root{
-  /* ===== DESIGN TOKENS: edit here ===== */
-  --bg:#0e1217; --surface:#151b23; --line:#2a333f;
-  --text:#ebe8e0; --muted:#a3acb7;
-  --accent:#f2b84b; --accent-ink:#1a1305; --cool:#7cc8da;
-  --font-display:"Fraunces",Georgia,serif;
-  --font-mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
-  --s1:.5rem; --s2:1rem; --s3:1.75rem; --s4:3rem; --s5:clamp(4rem,9vw,7.5rem);
-  --maxw:1120px;
-  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
-@media (prefers-color-scheme:light){
-  :root:not([data-theme="dark"]){--bg:#f6f3ec;--surface:#ffffff;--line:#d8d3c6;--text:#1b1f26;--muted:#4f5864;--accent:#8a5a00;--accent-ink:#fff;--cool:#0b6478}
+
+:root {
+    --bg: #050914;
+    --card: #0c1729;
+    --cyan: #00e5ff;
+    --blue: #397bff;
+    --white: #eaf4ff;
+    --muted: #9aabc1;
 }
-:root[data-theme="dark"]{color-scheme:dark}
-*,*::before,*::after{box-sizing:inherit}
-html{scroll-behavior:smooth;scroll-padding-top:calc(4.5rem + env(safe-area-inset-top,0px));height:auto}
-body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-display);font-size:clamp(1rem,.95rem + .25vw,1.14rem);line-height:1.7}
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:60}
-a{color:inherit}
-:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:2px}
-.wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(1.1rem,4vw,2rem)}
-.mono{font-family:var(--font-mono);font-size:.82rem;letter-spacing:.01em}
-h1,h2,h3{font-weight:800;line-height:1.08;margin:0;letter-spacing:-.02em}
-h2{font-size:clamp(1.9rem,1.3rem + 2.6vw,3.2rem);margin-bottom:var(--s3)}
-section{padding:var(--s5) 0;border-top:1px solid var(--line)}
-p{margin:0 0 1em;max-width:62ch}
 
-/* nav */
-header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-nav{display:flex;align-items:center;justify-content:space-between;gap:var(--s2);height:3.6rem}
-.mono-logo{font-weight:800;text-decoration:none;font-size:1.15rem;display:flex;align-items:center;gap:.6rem}
-.mono-logo b{display:grid;place-items:center;width:2rem;height:2rem;background:var(--accent);color:var(--accent-ink);font-family:var(--font-mono);font-size:.8rem}
-nav ul{display:flex;gap:clamp(.7rem,2vw,1.6rem);list-style:none;margin:0;padding:0;overflow-x:auto;scrollbar-width:none}
-nav ul a{font-family:var(--font-mono);font-size:.8rem;text-decoration:none;color:var(--muted);padding:.5rem .1rem;border-bottom:2px solid transparent;transition:color .2s,border-color .2s;white-space:nowrap}
-nav ul a:hover{color:var(--text);border-color:var(--accent)}
+body {
+    font-family: Arial, sans-serif;
+    background: var(--bg);
+    color: var(--white);
+    line-height: 1.7;
+}
 
-/* hero */
-.hero{padding:clamp(3rem,8vw,6.5rem) 0 var(--s5);border-top:0}
-.hero-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:var(--s4);align-items:end}
-.tag{display:inline-block;border:1px solid var(--accent);color:var(--accent);padding:.25rem .7rem;margin-bottom:var(--s3);font-family:var(--font-mono);font-size:.8rem}
-h1{font-size:clamp(3rem,1.2rem + 9vw,7.5rem);font-weight:800;line-height:.92}
-.role{font-size:clamp(1.15rem,1rem + 1vw,1.7rem);color:var(--cool);margin:var(--s3) 0 var(--s2);font-weight:600}
-.cta{display:flex;flex-wrap:wrap;gap:var(--s2);margin-top:var(--s3)}
-.btn{font-family:var(--font-mono);font-size:.88rem;font-weight:600;text-decoration:none;padding:.85rem 1.3rem;border:1.5px solid var(--text);transition:transform .2s,background .2s,color .2s;display:inline-block;cursor:pointer;background:none;color:var(--text)}
-.btn:hover{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--accent)}
-.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
-.log{border:1px solid var(--line);background:var(--surface);padding:var(--s3);line-height:1.9}
-.log dt{color:var(--muted)} .log dd{margin:0 0 .6rem;color:var(--text)}
-.log dl{margin:0}
-.log .dot{display:inline-block;width:.55rem;height:.55rem;border-radius:50%;background:var(--cool);margin-right:.5rem}
-@media (prefers-reduced-motion:no-preference){.log .dot{animation:pulse 2.2s ease-in-out infinite}}
-@keyframes pulse{50%{opacity:.25}}
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
-/* projects */
-.proj-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--s3)}
-.proj{grid-column:span 6;background:var(--surface);border:1px solid var(--line);display:flex;flex-direction:column;transition:border-color .2s,transform .2s}
-.proj:nth-child(1){grid-column:span 7}.proj:nth-child(2){grid-column:span 5}
-.proj:nth-child(3){grid-column:span 5}.proj:nth-child(4){grid-column:span 7}
-.proj:hover{border-color:var(--accent);transform:translateY(-3px)}
-/* SWAP: replace .shot background with <img src="your-screenshot.png" alt="..."> inside .shot */
-.shot{aspect-ratio:16/9;position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
-.shot img{width:100%;height:100%;object-fit:cover;display:block}
-.shot span{position:absolute;left:.9rem;bottom:.7rem;font-family:var(--font-mono);font-size:.75rem;background:var(--bg);color:var(--text);padding:.15rem .5rem}
-.g1{background:repeating-linear-gradient(90deg,transparent 0 22px,rgba(124,200,218,.25) 22px 23px),linear-gradient(135deg,#12303a,#0e1217 70%)}
-.g2{background:radial-gradient(circle at 25% 30%,#f2b84b55 0 12%,transparent 13%),radial-gradient(circle at 70% 65%,#7cc8da44 0 18%,transparent 19%),#161c25}
-.g3{background:conic-gradient(from 210deg at 70% 80%,#7cc8da33,#f2b84b33,#0e1217 60%),#131a22}
-.g4{background:linear-gradient(120deg,transparent 0 40%,#f2b84b33 40% 41%,transparent 41%),repeating-linear-gradient(45deg,#18202a 0 14px,#121820 14px 28px)}
-.proj-body{padding:var(--s3);display:flex;flex-direction:column;gap:var(--s2);flex:1}
-.proj h3{font-size:1.5rem}
-.when{color:var(--muted)}
-.pis{margin:0;display:grid;gap:.55rem}
-.pis div{display:grid;grid-template-columns:5.6rem 1fr;gap:.8rem;line-height:1.5;font-size:.97rem}
-.pis dt{font-family:var(--font-mono);font-size:.76rem;color:var(--accent);padding-top:.2rem}
-.pis dd{margin:0}
-.pills{display:flex;flex-wrap:wrap;gap:.4rem;list-style:none;padding:0;margin:0}
-.pills li{font-family:var(--font-mono);font-size:.74rem;border:1px solid var(--line);padding:.2rem .6rem;color:var(--cool)}
-.links{display:flex;gap:var(--s3);margin-top:auto;padding-top:var(--s2)}
-.links a{font-family:var(--font-mono);font-size:.82rem;color:var(--text);text-decoration-color:var(--accent);text-underline-offset:5px}
-.links a:hover{color:var(--accent)}
-.also{margin-top:var(--s3);color:var(--muted)}
+header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(5,9,20,0.94);
+    border-bottom: 1px solid #18314b;
+    padding: 18px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-/* timeline */
-.tl{list-style:none;margin:0;padding:0 0 0 1.6rem;border-left:2px solid var(--line)}
-.tl li{position:relative;padding:0 0 var(--s4) var(--s3);display:grid;grid-template-columns:11rem 1fr;gap:var(--s3)}
-.tl li:last-child{padding-bottom:0}
-.tl li::before{content:"";position:absolute;left:calc(-1.6rem - 7px);top:.55rem;width:12px;height:12px;background:var(--accent);border:2px solid var(--bg)}
-.tl h3{font-size:1.4rem}
-.tl .who{color:var(--cool);margin:.2rem 0 .6rem}
-@media (max-width:760px){.tl li{grid-template-columns:1fr;gap:.3rem}}
+.logo {
+    color: var(--cyan);
+    font-size: 23px;
+    font-weight: bold;
+}
 
-/* skills */
-.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:0;border:1px solid var(--line)}
-.skills div{padding:var(--s3);border-right:1px solid var(--line);border-bottom:1px solid var(--line);margin:-1px -1px 0 0}
-.skills h3{font-size:1.15rem;margin-bottom:var(--s2)}
-.skills ul{list-style:none;margin:0;padding:0;display:grid;gap:.4rem}
-.skills li{font-size:.98rem;padding-left:1.1rem;position:relative;line-height:1.45}
-.skills li::before{content:"";position:absolute;left:0;top:.62em;width:.45rem;height:2px;background:var(--accent)}
+nav {
+    display: flex;
+    gap: 22px;
+}
 
-/* about */
-.about{display:grid;grid-template-columns:1fr 1fr;gap:var(--s4)}
-.facts{border-top:2px solid var(--accent);padding-top:var(--s2)}
-.facts p{margin:0 0 .8rem;font-size:.95rem}
-@media (max-width:860px){.hero-grid,.about{grid-template-columns:1fr}.proj,.proj:nth-child(n){grid-column:1/-1}}
+nav a {
+    color: var(--muted);
+    font-size: 14px;
+    transition: .3s;
+}
 
-/* footer */
-footer{background:var(--accent);color:var(--accent-ink);padding:var(--s5) 0 var(--s4)}
-footer :focus-visible{outline-color:var(--accent-ink)}
-footer h2{font-size:clamp(2.2rem,1rem + 6vw,5.5rem);margin-bottom:var(--s3);max-width:14ch}
-.mail{display:flex;flex-wrap:wrap;gap:var(--s2);align-items:center}
-.mail code{font-family:var(--font-mono);font-size:clamp(.95rem,.6rem + 1.6vw,1.5rem);font-weight:600;word-break:break-all}
-footer .btn{background:var(--accent-ink);color:var(--accent);border-color:var(--accent-ink)}
-footer .btn:hover{box-shadow:4px 4px 0 rgba(0,0,0,.3)}
-.soc{display:flex;flex-wrap:wrap;gap:var(--s3);list-style:none;margin:var(--s3) 0;padding:0;font-family:var(--font-mono);font-size:.88rem}
-.soc a{text-underline-offset:5px;font-weight:600}
-.copy{font-family:var(--font-mono);font-size:.78rem;border-top:1px solid rgba(0,0,0,.35);padding-top:var(--s2);margin:0;max-width:none}
-.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+nav a:hover {
+    color: var(--cyan);
+}
+
+section {
+    padding: 90px 10%;
+    scroll-margin-top: 70px;
+}
+
+.hero {
+    min-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background:
+      radial-gradient(ellipse at 80% 40%, #10345a55, transparent 50%);
+}
+
+.tag {
+    color: var(--cyan);
+    letter-spacing: 3px;
+    font-size: 13px;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 7vw, 76px);
+    line-height: 1.15;
+    margin-bottom: 15px;
+}
+
+.hero h1 span {
+    color: var(--cyan);
+    text-shadow: 0 0 25px #00e5ff55;
+}
+
+.hero h2 {
+    color: var(--muted);
+    font-size: 22px;
+    margin-bottom: 18px;
+}
+
+.hero p {
+    max-width: 650px;
+    color: var(--muted);
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border: 1px solid var(--cyan);
+    color: var(--cyan);
+    border-radius: 5px;
+    margin: 5px 10px 5px 0;
+    transition: .3s;
+}
+
+.btn:hover {
+    background: var(--cyan);
+    color: #00111b;
+    box-shadow: 0 0 20px #00e5ff55;
+}
+
+.section-title {
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.section-title span {
+    color: var(--cyan);
+}
+
+.about-text {
+    max-width: 800px;
+    color: var(--muted);
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 22px;
+}
+
+.card {
+    background: var(--card);
+    border: 1px solid #183650;
+    border-radius: 10px;
+    padding: 25px;
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    border-color: var(--cyan);
+    box-shadow: 0 0 20px #00e5ff16;
+}
+
+.card h3 {
+    color: var(--cyan);
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.skill {
+    padding: 10px 17px;
+    border: 1px solid #245071;
+    background: var(--card);
+    color: var(--cyan);
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.contact-text {
+    color: var(--muted);
+    margin-bottom: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    border-top: 1px solid #18314b;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+@media(max-width: 700px) {
+    header {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    section {
+        padding: 65px 7%;
+    }
+
+    .hero {
+        min-height: 75vh;
+    }
+}
 </style>
 </head>
+
 <body>
+
 <header>
-  <div class="wrap">
-    <nav aria-label="Primary">
-      <a class="mono-logo" href="#top" aria-label="Anagha R, back to top"><b>AR</b><span>Anagha R</span></a>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+    <div class="logo">ANAGHA.R</div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
     </nav>
-  </div>
 </header>
 
-<main id="top">
-  <section class="hero" aria-labelledby="h1">
-    <div class="wrap hero-grid">
-      <div>
-        <span class="tag">B.Sc. Cyber Forensics · Class of 2026</span>
-        <h1 id="h1">Anagha&nbsp;R</h1>
-        <p class="role">Cyber forensics graduate, specialised in network security</p>
-        <p>I investigate network traffic, malware and cloud configurations, then build secure solutions from what I find. Ready to start a career in cyber security and network security.</p>
-        <div class="cta">
-          <a class="btn primary" href="#projects">View work</a>
-          <!-- SWAP: replace #resume-pdf with the path/URL of your resume PDF, e.g. href="assets/Anagha_R_Resume.pdf" -->
-          <a class="btn" href="#resume-pdf" id="resume-pdf">Download resume</a>
+<section class="hero" id="home">
+    <div class="tag">WELCOME TO MY DIGITAL WORLD</div>
+
+    <h1>Hi, I'm <span>Anagha R</span></h1>
+
+    <h2>Cyber Forensics Graduate | Cybersecurity Enthusiast</h2>
+
+    <p>
+        Passionate about cybersecurity, network security and digital
+        forensics. Interested in exploring security threats, analysing
+        network traffic and learning how to protect digital systems.
+    </p>
+
+    <div>
+        <a href="#projects" class="btn">Explore My Work</a>
+        <a href="#contact" class="btn">Contact Me</a>
+    </div>
+</section>
+
+<section id="about">
+    <h2 class="section-title">01. <span>About Me</span></h2>
+
+    <p class="about-text">
+        I am a BSc Cyber Forensics graduate from the School of
+        Technology and Applied Sciences (STAS), Edappally.
+
+        I have an interest in cybersecurity, network security,
+        vulnerability assessment and digital forensics.
+
+        I enjoy learning security tools, exploring practical
+        cybersecurity concepts and building technical projects.
+        I am looking forward to starting my career in cybersecurity.
+    </p>
+</section>
+
+<section id="skills">
+    <h2 class="section-title">02. <span>Technical Skills</span></h2>
+
+    <div class="skills">
+        <span class="skill">Python</span>
+        <span class="skill">Linux</span>
+        <span class="skill">Kali Linux</span>
+        <span class="skill">Nmap</span>
+        <span class="skill">Wireshark</span>
+        <span class="skill">Metasploit</span>
+        <span class="skill">Scapy</span>
+        <span class="skill">Nessus</span>
+        <span class="skill">OpenVAS</span>
+        <span class="skill">Splunk</span>
+        <span class="skill">HTML</span>
+        <span class="skill">CSS</span>
+        <span class="skill">MySQL</span>
+        <span class="skill">GitHub</span>
+    </div>
+</section>
+
+<section id="projects">
+    <h2 class="section-title">03. <span>My Projects</span></h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>01. Intrusion Detection System</h3>
+            <p>
+                Academic project exploring real-time intrusion
+                detection and prevention using CNN, NSL-KDD dataset
+                and Scapy packet analysis.
+            </p>
         </div>
-      </div>
-      <aside class="log" aria-label="Quick facts">
-        <dl class="mono">
-          <dt><span class="dot" aria-hidden="true"></span>status</dt><dd>Open to cyber security roles</dd>
-          <dt>degree</dt><dd>B.Sc. Cyber Forensics, MG University</dd>
-          <dt>focus</dt><dd>Network security</dd>
-          <dt>based in</dt><dd>Kerala, India</dd>
-        </dl>
-      </aside>
+
+        <div class="card">
+            <h3>02. YouTube Bot Detection</h3>
+            <p>
+                Academic project focused on identifying
+                suspicious bot comments and analysing
+                comment behaviour.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>03. AWS Cloud Security</h3>
+            <p>
+                Practical learning project exploring cloud
+                security configurations and security controls
+                in AWS.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>04. DevSecOps Security</h3>
+            <p>
+                Learning project using GitHub Actions,
+                Bandit, Trivy and Dependabot for
+                automated security checks.
+            </p>
+        </div>
+
     </div>
-  </section>
+</section>
 
-  <section id="about" aria-labelledby="about-h">
-    <div class="wrap about">
-      <div>
-        <h2 id="about-h">About</h2>
-        <p>I am a detail-oriented Cyber Forensics graduate from the School of Technology and Applied Science, Edappally (MG University, Kottayam), where I specialised in network security. My coursework and projects cover digital forensics, network monitoring and threat analysis.</p>
-        <p>I learn by building: an intrusion detection system, a malware analysis, an AWS security setup and a DevSecOps pipeline. After a Cyber Security internship at Jyesta Corporate Entity and several security courses, I am looking for a first role where I can keep learning and be useful quickly.</p>
-      </div>
-      <div class="facts mono">
-        <p><strong>Education</strong></p>
-        <p>B.Sc. Cyber Forensics, 2023–2026<br>Plus Two, Computer Science, GGHSS Madappally, 2021–2023</p>
-        <p><strong>Certificates</strong></p>
-        <p>Penetration Testing, Threat Hunting, and Cryptography, Coursera, 2025</p>
-        <p>Wi-Fi Hacking, APK Backdoor Injection, Phishing Simulation &amp; Dark Web Exploitation, Hackrealm Academy, 2025</p>
-        <p>IBM Certified: Introduction to Cybersecurity Careers, Coursera, 2025</p>
-        <p>Career Orientation on Cybersecurity, Technovalley Software India Private Limited, 2026</p>
-        <p><strong>Languages</strong></p>
-        <p>Malayalam (native), English (proficient)</p>
-      </div>
+<section id="education">
+    <h2 class="section-title">04. <span>Education</span></h2>
+
+    <div class="card">
+        <h3>BSc Cyber Forensics</h3>
+        <p>School of Technology and Applied Sciences (STAS), Edappally</p>
+        <p>Graduated: 2026</p>
     </div>
-  </section>
+</section>
 
-  <section id="projects" aria-labelledby="proj-h">
-    <div class="wrap">
-      <h2 id="proj-h">Selected projects</h2>
-      <div class="proj-grid">
+<section id="contact">
+    <h2 class="section-title">05. <span>Contact Me</span></h2>
 
-        <article class="proj">
-          <!-- SWAP: put <img src="screens/ids.png" alt="Intrusion detection dashboard"> inside .shot and remove the gradient class -->
-          <div class="shot g1"><span>CNN · NSL-KDD</span></div>
-          <div class="proj-body">
-            <h3>Real-Time Intrusion Detection System</h3>
-            <p class="when mono">Dec 2025 – Feb 2026</p>
-            <dl class="pis">
-              <div><dt>Problem</dt><dd>Suspicious network traffic has to be spotted as it happens.</dd></div>
-              <div><dt>Solution</dt><dd>A CNN-based detector trained on the NSL-KDD dataset.</dd></div>
-              <div><dt>Impact</dt><dd>A working system that flags suspicious traffic in real time.</dd></div>
-            </dl>
-            <ul class="pills"><li>CNN</li><li>NSL-KDD</li><li>Python</li></ul>
-            <div class="links"><a href="#">Live demo</a><a href="#">Source code</a></div>
-          </div>
-        </article>
+    <p class="contact-text">
+        Interested in cybersecurity opportunities or collaboration?
+        Feel free to connect with me.
+    </p>
 
-        <article class="proj">
-          <!-- SWAP screenshot -->
-          <div class="shot g2"><span>forensic analysis</span></div>
-          <div class="proj-body">
-            <h3>Malware Analysis</h3>
-            <p class="when mono">Apr 2026</p>
-            <dl class="pis">
-              <div><dt>Problem</dt><dd>Unknown samples need to be understood before they can be contained.</dd></div>
-              <div><dt>Solution</dt><dd>Analysis with forensic tools to identify the threat.</dd></div>
-              <div><dt>Impact</dt><dd>Identified threats and the changes they made to the system.</dd></div>
-            </dl>
-            <ul class="pills"><li>Forensic tools</li><li>Malware analysis</li></ul>
-            <div class="links"><a href="#">Live demo</a><a href="#">Source code</a></div>
-          </div>
-        </article>
+    <a href="https://github.com/anagha-va"
+       target="_blank" class="btn">GitHub</a>
 
-        <article class="proj">
-          <!-- SWAP screenshot -->
-          <div class="shot g3"><span>AWS</span></div>
-          <div class="proj-body">
-            <h3>End-to-End AWS Cloud Security Setup</h3>
-            <p class="when mono">Nov 2025</p>
-            <dl class="pis">
-              <div><dt>Problem</dt><dd>Cloud environments need access, visibility and networking secured together.</dd></div>
-              <div><dt>Solution</dt><dd>Configured IAM, monitoring and secure networking end to end.</dd></div>
-              <div><dt>Impact</dt><dd>A complete cloud security baseline.</dd></div>
-            </dl>
-            <ul class="pills"><li>AWS</li><li>IAM</li><li>Monitoring</li><li>Secure networking</li></ul>
-            <div class="links"><a href="#">Live demo</a><a href="#">Source code</a></div>
-          </div>
-        </article>
+    <!-- Replace the link below with your LinkedIn profile -->
+    <a href="https://www.linkedin.com/"
+       target="_blank" class="btn">LinkedIn</a>
 
-        <article class="proj">
-          <!-- SWAP screenshot -->
-          <div class="shot g4"><span>CI/CD</span></div>
-          <div class="proj-body">
-            <h3>Secure DevSecOps Pipeline</h3>
-            <p class="when mono">Nov 2025</p>
-            <dl class="pis">
-              <div><dt>Problem</dt><dd>Security checks are often left until after deployment.</dd></div>
-              <div><dt>Solution</dt><dd>CI/CD pipelines in GitHub Actions covering testing, deployment and security scans.</dd></div>
-              <div><dt>Impact</dt><dd>Security scanning built into every pipeline run.</dd></div>
-            </dl>
-            <ul class="pills"><li>GitHub Actions</li><li>CI/CD</li><li>Security scans</li></ul>
-            <div class="links"><a href="#">Live demo</a><a href="#">Source code</a></div>
-          </div>
-        </article>
-      </div>
-      <p class="also mono">Also built: YouTube Bot Comment Detection System, which identifies spam and automated comments (Aug – Nov 2025).</p>
-    </div>
-  </section>
+    <!-- Replace with your actual email address -->
+    <a href="mailto:YOUR_EMAIL@gmail.com"
+       class="btn">Email Me</a>
+</section>
 
-  <section id="experience" aria-labelledby="exp-h">
-    <div class="wrap">
-      <h2 id="exp-h">Experience</h2>
-      <ol class="tl">
-        <li>
-          <p class="mono when">Nov 2025 – Jan 2026</p>
-          <div>
-            <h3>Cyber Security Intern</h3>
-            <p class="who">Jyesta Corporate Entity</p>
-            <p>Completed internship training in cyber security.</p>
-          </div>
-        </li>
-        <li>
-          <p class="mono when">2023 – 2026</p>
-          <div>
-            <h3>B.Sc. Cyber Forensics</h3>
-            <p class="who">School of Technology and Applied Science, Edappally · MG University, Kottayam</p>
-            <p>Specialised in network security.</p>
-          </div>
-        </li>
-      </ol>
-    </div>
-  </section>
-
-  <section id="skills" aria-labelledby="skills-h">
-    <div class="wrap">
-      <h2 id="skills-h">Skills</h2>
-      <div class="skills">
-        <div><h3>Network security</h3><ul><li>Network security fundamentals</li><li>Firewall &amp; network monitoring</li><li>Vulnerability assessment</li><li>Ethical hacking concepts</li></ul></div>
-        <div><h3>Forensics &amp; threats</h3><ul><li>Digital forensics</li><li>Malware analysis</li><li>Threat analysis</li><li>Intrusion detection</li></ul></div>
-        <div><h3>Systems &amp; code</h3><ul><li>Linux &amp; Windows administration</li><li>Basic Python programming</li></ul></div>
-        <div><h3>Cloud &amp; DevSecOps</h3><ul><li>AWS IAM, monitoring, secure networking</li><li>GitHub Actions CI/CD with security scans</li></ul></div>
-        <div><h3>Working style</h3><ul><li>Analytical thinking</li><li>Problem solving</li><li>Time management</li><li>Team collaboration</li><li>Fast learner</li><li>Communication</li></ul></div>
-      </div>
-    </div>
-  </section>
-</main>
-
-<footer id="contact">
-  <div class="wrap">
-    <h2>Let’s talk security.</h2>
-    <div class="mail">
-      <code id="email">anagharavi255@gmail.com</code>
-      <button class="btn" id="copy" type="button">Copy email</button>
-      <span class="sr" role="status" id="status"></span>
-    </div>
-    <ul class="soc">
-      <!-- SWAP: add your real profile URLs. The resume lists the handle "Anagharofficial" without naming the platform -->
-      <li><a href="#">GitHub</a></li>
-      <li><a href="#">LinkedIn</a></li>
-      <li><a href="mailto:anagharavi255@gmail.com">Email</a></li>
-    </ul>
-    <p class="copy">Kerala, India · © 2026 Anagha R</p>
-  </div>
+<footer>
+    © 2026 Anagha R | Cybersecurity Portfolio
+    <br>
+    Designed with passion for cybersecurity.
 </footer>
 
-<script>
-(function(){
-  var btn=document.getElementById('copy'),st=document.getElementById('status'),email='anagharavi255@gmail.com';
-  btn.addEventListener('click',function(){
-    function done(ok){btn.textContent=ok?'Copied':'Copy failed, select it manually';st.textContent=btn.textContent;setTimeout(function(){btn.textContent='Copy email'},2200)}
-    try{
-      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(email).then(function(){done(true)},function(){done(false)})}
-      else{var r=document.createRange();r.selectNode(document.getElementById('email'));var s=getSelection();s.removeAllRanges();s.addRange(r);done(document.execCommand('copy'))}
-    }catch(e){done(false)}
-  });
-})();
-</script>
 </body>
 </html>
